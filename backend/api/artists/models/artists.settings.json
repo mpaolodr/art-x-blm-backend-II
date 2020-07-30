@@ -1,0 +1,75 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "name": "Artists"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 2
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "unique": false,
+      "minLength": 2
+    },
+    "blackArtist": {
+      "type": "boolean",
+      "required": true
+    },
+    "exchange": {
+      "type": "boolean",
+      "required": true
+    },
+    "bio": {
+      "type": "richtext",
+      "required": false,
+      "maxLength": 1000
+    },
+    "artistEmail": {
+      "type": "email",
+      "required": true,
+      "unique": true,
+      "private": true
+    },
+    "artistPassword": {
+      "type": "password",
+      "minLength": 8,
+      "required": true
+    },
+    "lgbtq": {
+      "type": "boolean"
+    },
+    "artistProfilePic": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "digital": {
+      "type": "boolean"
+    },
+    "latinx": {
+      "type": "boolean"
+    },
+    "indigenous": {
+      "type": "boolean"
+    },
+    "printID": {
+      "collection": "prints"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prints",
+  "info": {
+    "name": "prints"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "digital": {
+      "type": "boolean"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "artistID": {
+      "model": "artists"
+    }
+  }
+}

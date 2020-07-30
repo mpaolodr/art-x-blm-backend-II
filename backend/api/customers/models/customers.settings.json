@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "customers",
+  "info": {
+    "name": "customers"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "custEmail": {
+      "type": "email",
+      "unique": true,
+      "required": true
+    },
+    "custPassword": {
+      "type": "password",
+      "required": true,
+      "minLength": 8
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "orders": {
+      "collection": "order"
+    }
+  }
+}

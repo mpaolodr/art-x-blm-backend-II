@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "custEmail": {
+      "type": "email",
+      "required": true
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "processed": {
+      "type": "boolean"
+    },
+    "prints": {
+      "collection": "prints"
+    },
+    "size": {
+      "type": "string"
+    }
+  }
+}
